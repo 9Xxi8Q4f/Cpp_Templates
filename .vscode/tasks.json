@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++-13 build active file",
+			"command": "/home/linuxbrew/.linuxbrew/bin/g++-13",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"-std=c++23",
+				"${file}", // Look this up in VS Code extension settings
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}" // this is "main" for now
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: /home/linuxbrew/.linuxbrew/bin/g++-13"
+		}
+	]
+}
