@@ -311,15 +311,15 @@ void while_loop() {
         ++i;
     }
 
-    const size_t COUNT{100};
-    size_t i{0}; // Iterator declaration
+    // const size_t COUNT{100};
+    // size_t i{0}; // Iterator declaration
 
-    while(i < COUNT ){ // Test
-       std::cout << i << " : I love C++" << std::endl;
+    // while(i < COUNT ){ // Test
+    //    std::cout << i << " : I love C++" << std::endl;
 
-       ++i; // Incrementation 
-    }
-    std::cout << "Loop done!" << std::endl;
+    //    ++i; // Incrementation 
+    // }
+    // std::cout << "Loop done!" << std::endl;
 
     return;
 }
@@ -341,10 +341,23 @@ void do_while_loop() {
 }
 
 
-
-
 int main() {
 
-   
+    //* For Loop with initialization condition and incrementation
+    for(double multiplier{4}; auto i : {1,2,3,4,5,6,7,8,9,10}){
+        std::cout << "result : " << ( i * multiplier) << std::endl;
+    }
+
+    int array[] {1,2,3,4,5,6,7,8,9,10};
+    double plus_ten {10.57};
+
+    for(plus_ten; auto value : array){
+        std::cout << "result : " << value+plus_ten << std::endl;
+    }
+
+    for(auto value : array){
+        std::cout << "result : " << value << std::endl;
+    }
+
     return 0;
 }
