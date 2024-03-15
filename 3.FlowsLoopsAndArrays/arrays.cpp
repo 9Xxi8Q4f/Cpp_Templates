@@ -122,11 +122,73 @@ void size_of_arrays() {
 
 void arrays_of_char() {
 
-    char name[] {"John"};
+    char name[] {"Hello"};
     std::cout << "name : " << name << std::endl;
+    
+    
+    for (auto i : name)
+    {
+        cout<<i<<endl;
+    }
+
+    int length = sizeof(name);
+    cout<< "sizeof name : "<< length << endl;
+    
+    char name2 [] {'H','e','l','l','o'};
+    std::cout << "name2 : " << sizeof(name2) << std::endl;
+   /*
+    //Change characters in our array
+    message[1] = 'a';
+
+    //Print out the array through looping
+    std::cout << "message : ";
+    for( auto c : message){
+        std::cout << c ;
+    }
+    std::cout << std::endl;
+    */
+
+//If a character array is null terminated, it's called as C-String
+    
+    char message1 [] {'H','e','l','l','o','\0'};
+    std::cout << "message1 : " << message1 << std::endl;
+    std::cout << "sizeof(message1) : " << sizeof(message1) << std::endl;
+    
+    char message2 [6] {'H','e','l','l','o'};
+    std::cout << "message2 : " << message2 << std::endl;
+    std::cout << "sizeof(message2) : " << sizeof(message2) << std::endl;
+
+    char message3 [] {'H','e','l','l','o'}; // This is not a c string ,
+											//as there is not null character
+    std::cout << "message3 : " << message3 << std::endl;
+    std::cout << "sizeof(message3) : " << sizeof(message3) << std::endl;
+
+    char message4 [] {"Hello"};
+    std::cout << "message4 : " << message4 << std::endl;
+    std::cout << "sizeof(message4) : " << sizeof(message4) << std::endl;
+
+    int numbers [] {1,2,3,4,5};
+    std::cout << "numbers :  " << numbers << std::endl;
 }
 
+void array_bounds() {
+
+    int numbers [10] {1,2,3,4,5,6,7,8,9,10};
+
+	//! Read beyond bounds : Will read garbage or crash your program
+	//std::cout << "numbers[12] : " << numbers[12] << std::endl;
+
+	//Write beyond bounds. The compiler allows it. But you don't own 
+	//the memory at index 12, so other programs may modify it and your
+	//program may read bogus data at a later time. Or you can even
+	//corrupt data used by other parts of your ptogram
+
+	numbers[12] = 1000;
+	std::cout << "numbers[129] : " << numbers[12] << std::endl;
+
+    std::cout << "Program ending...." << std::endl;
+}
 int main() {
-    size_of_arrays();
+    array_bounds();
     return 0;
 }
