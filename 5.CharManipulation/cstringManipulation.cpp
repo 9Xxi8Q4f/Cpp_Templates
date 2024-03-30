@@ -121,7 +121,7 @@ int main(){
 
     std::cout << "-----------------------------" << std::endl;
 
-    //Find the first occurrence of a character 
+    //* Find the first occurrence of a character 
 	//CODE STOLEN FROM THE DOCS : 
     
     std::cout << std::endl;
@@ -147,6 +147,47 @@ int main(){
 	}
 	std::cout << "iterations : " << iterations << std::endl;
     
+    std::cout << "-----------------------------" << std::endl;
+
+    //* A lesser version that will loop 25 times
+    
+	//Find the first occurrence of a character 
+	//CODE STOLEN FROM THE DOCS : 
+	std::cout << std::endl;
+	std::cout << "std::strchr : " << std::endl;
+	//doc : https://en.cppreference.com/w/cpp/string/byte/strchr
+
+	//we use std::strchr to find all the characters one by one.
+
+	const char* str{ "Try not. Do, or do not. There is no try." };
+	char target = 'T';
+	const char* result{ nullptr };
+	size_t iterations{};
+
+
+	while ((result = std::strchr(str, target)) != nullptr) {
+		std::cout << "Found '" << target
+			<< "' starting at '" << result << "'\n";
+
+		// Increment result, otherwise we'll find target at the same location
+		++result; // Making the pointer point to the next character
+		++iterations;
+	}
+	std::cout << "iterations : " << iterations << std::endl;
+    
+    std::cout << "-----------------------------" << std::endl;
+
+	//Find last occurence
+	//CODE STOLEN FROM THE DOCS : 
+    std::cout << std::endl;
+    std::cout << "std::strrchr : " << std::endl;
+	//doc : https://en.cppreference.com/w/cpp/string/byte/strrchr
+	
+    char input[] = "/home/user/hello.cpp";
+    char* output = std::strrchr(input, '/');
+    if(output)
+        std::cout << output+1 << std::endl; //+1 because we want to start printing past 
+                                            // the character found by std::strrchr.
 
     return 0;
 }
