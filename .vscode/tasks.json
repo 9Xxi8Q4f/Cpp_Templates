@@ -9,9 +9,10 @@
 				"-fdiagnostics-color=always",
 				"-g",
 				"-std=c++23",
-				"${file}", // Look this up in VS Code extension settings
+				// "${file}", // Look this up in VS Code extension settings
+                "${fileDirname}/**.cpp", //! ${workspaceFolder}/**.cpp might be better
 				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}" // this is "main" for now
+				"${fileDirname}/${fileBasenameNoExtension}" // the output is named "main" for now
 			],
 			"options": {
 				"cwd": "${fileDirname}"
