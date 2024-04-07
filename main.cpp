@@ -5,6 +5,7 @@
 
 int main(){
 
+    // Not needed
     // int maximum = min(134,56);
     // std::cout << "max : " << maximum << std::endl;
 
